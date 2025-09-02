@@ -1,0 +1,23 @@
+.image-wrapper {
+  object-fit: cover;
+  overflow: hidden;
+
+  width: 100%;
+  height: 100%;
+
+  border-radius: 0.5rem;
+}
+
+.cocktail-card-img {
+  object-fit: cover;
+
+  width: 100%;
+  height: 100%;
+
+  transition: transform 0.2s;
+}
+
+.cocktail-card-img:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
