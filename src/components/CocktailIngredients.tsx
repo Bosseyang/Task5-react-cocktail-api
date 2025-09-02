@@ -17,8 +17,10 @@ export const CocktailIngredients: React.FC<IIngredientsProps> = ({
           </li>
         ))}
       </ul>
-      <h2 className="instructions-h2">Instructions</h2>
-      <p className="instructions-p">{cocktail.instructions}</p>
+      <div className="instructions-wrapper">
+        <h2 className="instructions-h2">Instructions</h2>
+        <p className="instructions-p">{cocktail.instructions}</p>
+      </div>
     </div>
   );
 };
