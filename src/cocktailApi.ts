@@ -1,5 +1,5 @@
 import type { ICocktail } from "./types/types";
-import { mapRawCocktailData } from "./utils/mapRawCocktailData";
+import { mapRawCocktailData } from "./services/mapRawCocktailData";
 
 const URL = "https://www.thecocktaildb.com/api/json/v1/1";
 export async function getRandomCocktail(): Promise<ICocktail> {
