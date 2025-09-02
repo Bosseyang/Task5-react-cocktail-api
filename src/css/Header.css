@@ -6,3 +6,12 @@
 
   background-color: hsla(125, 11%, 56%, 0.6);
 }
+
+.header-link {
+  display: flex;
+  justify-content: center;
+}
+
+.header-nav a {
+  color: rgba(255, 255, 255, 0.555);
+}
