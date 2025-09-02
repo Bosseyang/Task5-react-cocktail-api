@@ -1,0 +1,27 @@
+.cocktail-card {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  gap: 1rem;
+  padding: 1rem;
+  background-color: lightgray;
+
+  border-radius: 1rem;
+}
+
+.cocktail-card:hover {
+  color: #655947;
+}
+
+h2.cocktail-card-h2:hover {
+  color: #655947;
+}
+
+.cocktail-card .hidden-h3 {
+  display: none;
+}
+
+.cocktail-card:hover .hidden-h3 {
+  display: block;
+}
