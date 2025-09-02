@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { type ICocktail } from "../types/types";
-import { getRandomCocktail } from "../cocktailApi";
+import { getRandomCocktail } from "../services/cocktailApi";
 
 export function useRandomCocktail() {
   const [cocktail, setCocktail] = useState<ICocktail | null>(null);
