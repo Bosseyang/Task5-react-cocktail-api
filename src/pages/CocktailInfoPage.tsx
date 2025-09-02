@@ -24,11 +24,13 @@ export const CocktailInfoPage: React.FC = () => {
   if (!cocktail) return <p>No cocktail was found.</p>;
   return (
     <section className="section cocktail-info-page">
-      <CocktailImage cocktail={cocktail} />
-      <p className="info-p">Category: {cocktail.category}</p>
-      <p className="info-p">Glass: {cocktail.glass}</p>
-      <p className="info-p">Alcoholic: {cocktail.alcoholic ? "Yes" : "No"}</p>
-      <p className="info-p">Tags: {cocktail.tags}</p>
+      <div className="image-category">
+        <CocktailImage cocktail={cocktail} classStyle="info-page-image" />
+        <p className="info-p">Category: {cocktail.category}</p>
+        <p className="info-p">Alcoholic: {cocktail.alcoholic ? "Yes" : "No"}</p>
+        <p className="info-p">Glass: {cocktail.glass}</p>
+      </div>
+      {/* <p className="info-p">Tags: {cocktail.tags}</p> */}
       <CocktailIngredients cocktail={cocktail} />
     </section>
   );
