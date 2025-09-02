@@ -1,0 +1,28 @@
+.section.cocktail-info-page {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+
+  padding-block: 2rem;
+  padding-inline: 5rem;
+
+  gap: 2rem;
+
+  
+}
+
+.info-page-image.image-wrapper {
+  /* width: 80%; */
+  aspect-ratio: 1/1;
+}
+
+.image-category {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: end;
+
+  width: 80%;
+  gap: 0.5rem;
+}
