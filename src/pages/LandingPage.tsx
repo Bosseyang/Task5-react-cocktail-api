@@ -13,7 +13,7 @@ export const LandingPage: React.FC = () => {
       </button>
       {loading && <Loader />}
       <div className={`load-card ${loading ? "loading" : ""}`}>
-        {cocktail && <CocktailCard cocktail={cocktail} classStyle={`landing-page-image`} />}
+        {cocktail && <CocktailCard cocktail={cocktail} />}
       </div>
     </main>
   );
