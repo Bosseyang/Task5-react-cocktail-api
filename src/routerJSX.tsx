@@ -2,6 +2,7 @@ import { createBrowserRouter, createRoutesFromElements, Route } from "react-rout
 import { App } from "./App";
 import { LandingPage } from "./pages/LandingPage";
 import { CocktailInfoPage } from "./pages/CocktailInfoPage";
+import { SearchPage } from "./pages/SearchPage";
 
 // Data router with object routes.
 // export const router = createBrowserRouter([
@@ -25,6 +26,7 @@ export const routerJSX = createBrowserRouter(
         {/* <Route path=/> */}
       </Route>
       <Route path="/cocktail/:id" element={<CocktailInfoPage />} />
+      <Route path="/search" element={<SearchPage />} />
     </Route>
   )
 );
