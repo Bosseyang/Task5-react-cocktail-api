@@ -1,14 +1,22 @@
 .cocktail-card {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: 1fr 30px;
   text-align: center;
+  justify-items: center;
 
-  gap: 1rem;
+  gap: 0.5rem;
   padding: 1rem;
   background-color: rgba(186, 154, 123, 0.6);
   box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.4);
 
   border-radius: 1rem;
+
+  width: 400px;
+  height: 500px;
+}
+.cocktail-card-link {
+  height: 100%;
+  width: 100%;
 }
 
 .cocktail-card:hover {
