@@ -6,6 +6,7 @@
   gap: 1rem;
   padding: 1rem;
   background-color: rgba(186, 154, 123, 0.6);
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.4);
 
   border-radius: 1rem;
 }
@@ -24,4 +25,8 @@ h2.cocktail-card-h2:hover {
 
 .cocktail-card:hover .hidden-h3 {
   display: block;
+}
+
+.load-card.loading {
+  display: none;
 }
