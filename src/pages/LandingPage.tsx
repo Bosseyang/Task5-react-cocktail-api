@@ -7,12 +7,14 @@ export const LandingPage: React.FC = () => {
 
   return (
     <main className="main landing-page">
-      {loading && <Loader />}
-      {cocktail && <CocktailCard cocktail={cocktail} classStyle={"landing-page-image"} />}
       <button onClick={fetchRandom}>
         <img src="/cocktail.svg" />
         <h2 className="h2 landing-page-h2">Random Cocktail</h2>
       </button>
+      {loading && <Loader />}
+      <div className={`load-card ${loading ? "loading" : ""}`}>
+        {cocktail && <CocktailCard cocktail={cocktail} classStyle={`landing-page-image`} />}
+      </div>
     </main>
   );
 };
