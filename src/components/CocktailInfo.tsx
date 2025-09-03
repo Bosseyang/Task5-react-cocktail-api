@@ -7,6 +7,15 @@ interface IInfoProps {
 export const CocktailIngredients: React.FC<IInfoProps> = ({ cocktail }: IInfoProps) => {
   return (
     <div className="ingredients-wrapper">
+      <p className="info-p">
+        <strong>Alcoholic:</strong> {cocktail.alcoholic ? "Yes" : "No"}
+      </p>
+      <p className="info-p">
+        <strong>Category:</strong> {cocktail.category}
+      </p>
+      <p className="info-p">
+        <strong>Glass:</strong> {cocktail.glass}
+      </p>
       <h2 className="ingredients-h2">Ingredients</h2>
       <ul className="ingredients-list">
         {cocktail.ingredients.map((ing, index) => (
