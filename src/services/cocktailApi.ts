@@ -15,3 +15,11 @@ export async function getCocktailById(id: string): Promise<ICocktail> {
   const data = await res.json();
   return mapRawCocktailData(data.drinks[0]);
 }
+
+export async function searchCocktailsByName(name: string): Promise<ICocktail[]> {
+  const res = await fetch(`${URL}/search.php?s=${name}`);
+  if (!res.ok) throw new Error(`Failed to fetch the cocktail with id: ${name}`);
+  const data = await res.json();
+  if (!data.drinks) return [];
+  return data.drinks.map(mapRawCocktailData);
+}
