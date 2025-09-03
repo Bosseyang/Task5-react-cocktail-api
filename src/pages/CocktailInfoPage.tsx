@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import type { ICocktail } from "../types/types";
 import { Loader } from "../components/Loader";
 import { CocktailImage } from "../components/CocktailImage";
-import { CocktailIngredients } from "../components/CocktailIngredients";
+import { CocktailIngredients } from "../components/CocktailInfo";
 import { useParams } from "react-router";
 import { getCocktailById } from "../services/cocktailApi";
 
@@ -28,15 +28,6 @@ export const CocktailInfoPage: React.FC = () => {
       <div className="content info-page-wrapper">
         <div className="image-category">
           <CocktailImage cocktail={cocktail} classStyle="info-page-image" />
-          <p className="info-p">
-            <strong>Category:</strong> {cocktail.category}
-          </p>
-          <p className="info-p">
-            <strong>Alcoholic:</strong> {cocktail.alcoholic ? "Yes" : "No"}
-          </p>
-          <p className="info-p">
-            <strong>Glass:</strong> {cocktail.glass}
-          </p>
         </div>
         <CocktailIngredients cocktail={cocktail} />
       </div>
