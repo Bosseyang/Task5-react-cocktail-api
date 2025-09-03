@@ -13,6 +13,8 @@
   animation: l3 1s infinite linear;
 
   align-self: center;
+  position: relative;
+  top: 2rem;
 }
 
 @keyframes l3 {
