@@ -1,0 +1,21 @@
+.cocktail-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+
+  list-style-type: none;
+
+  /* overflow-y: visible; */
+
+  /* height: 100%; */
+
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.cocktail-item {
+  display: flex;
+  justify-content: center;
+
+  height: 500px;
+}
