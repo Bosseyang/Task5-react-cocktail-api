@@ -1,4 +1,5 @@
 import type { ICocktail } from "../types/types";
+import { InfoP } from "./InfoP";
 
 interface IInfoProps {
   cocktail: ICocktail;
@@ -7,15 +8,20 @@ interface IInfoProps {
 export const CocktailIngredients: React.FC<IInfoProps> = ({ cocktail }: IInfoProps) => {
   return (
     <div className="ingredients-wrapper">
-      <p className="info-p">
-        <strong>Alcoholic:</strong> {cocktail.alcoholic ? "Yes" : "No"}
-      </p>
-      <p className="info-p">
-        <strong>Category:</strong> {cocktail.category}
-      </p>
-      <p className="info-p">
-        <strong>Glass:</strong> {cocktail.glass}
-      </p>
+      <div className="info-wrapper">
+        {cocktail.alcoholic ? (
+          <InfoP label={"Alcoholic:"} info={"Yes"} />
+        ) : (
+          <InfoP label={"Alcoholic:"} info={"No"} />
+        )}
+        <InfoP label={"Category:"} info={cocktail.category} />
+        <InfoP label={"Glass:"} info={cocktail.glass} />
+        {cocktail.tags.length ? (
+          <InfoP label={"Tags:"} info={`#${cocktail.tags.join(", #")}`} />
+        ) : (
+          ""
+        )}
+      </div>
       <h2 className="ingredients-h2">Ingredients</h2>
       <ul className="ingredients-list">
         {cocktail.ingredients.map((ing, index) => (
