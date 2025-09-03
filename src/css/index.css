@@ -1,11 +1,14 @@
 @import url("App.css");
 @import url("base.css");
-@import url("LandingPage.css");
-@import url("Loader.css");
+/* Components */
+@import url("Header.css");
 @import url("CocktailImage.css");
 @import url("CocktailCard.css");
-@import url("CocktailInfoPage.css");
-@import url("Header.css");
 @import url("CocktailIngredients.css");
-@import url("RandomButton.css");
-@import url("Button.css");
+@import url("SearchForm.css");
+/* Pages */
+@import url("pages/index.css");
+/* Buttons */
+@import url("buttons/index.css");
+/* Utils */
+@import url("Loader.css");
