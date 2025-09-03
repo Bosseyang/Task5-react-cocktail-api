@@ -19,9 +19,3 @@ main.landing-page {
   justify-content: center;
   align-items: center;
 }
-
-.landing-page-image.image-wrapper {
-  width: 400px;
-  height: 500px;
-}
-
