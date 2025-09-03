@@ -1,0 +1,15 @@
+.search-form {
+  display: inline-flex;
+  justify-content: center;
+
+  gap: 1rem;
+  padding: 0.8rem;
+
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  /* box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.4); */
+}
+.search-input {
+  border-radius: 5px;
+  padding: 0.3rem;
+}
