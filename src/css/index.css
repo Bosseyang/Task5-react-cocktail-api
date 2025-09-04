@@ -1,5 +1,10 @@
-@import url("App.css");
 @import url("base.css");
+/* Pages */
+@import url("pages/index.css");
+/* Buttons */
+@import url("buttons/index.css");
+/* Utils */
+@import url("Loader.css");
 /* Components */
 @import url("Header.css");
 @import url("CocktailImage.css");
@@ -7,9 +12,4 @@
 @import url("CocktailIngredients.css");
 @import url("SearchForm.css");
 @import url("CocktailList.css");
-/* Pages */
-@import url("pages/index.css");
-/* Buttons */
-@import url("buttons/index.css");
-/* Utils */
-@import url("Loader.css");
+@import url("Pagination.css");
