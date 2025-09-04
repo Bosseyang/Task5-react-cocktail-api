@@ -12,7 +12,7 @@ export const LandingPage: React.FC = () => {
         <h2 className="h2 landing-page-h2">Random Cocktail</h2>
       </button>
       {loading && <Loader />}
-      <div className={`load-card ${loading ? "loading" : ""}`}>
+      <div className={`load-wrapper ${loading ? "loading" : ""}`}>
         {cocktail && <CocktailCard cocktail={cocktail} />}
       </div>
     </main>
