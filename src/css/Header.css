@@ -1,6 +1,7 @@
 .header {
   padding: 1rem;
   text-align: center;
+  top: 0;
 
   width: 100%;
 
@@ -19,7 +20,7 @@
 }
 
 .header-nav a {
-  color: rgba(255, 255, 255, 0.555);
+  color: rgba(255, 255, 255, 1);
 }
 
 .header-nav a:hover {
