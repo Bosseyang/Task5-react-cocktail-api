@@ -26,8 +26,9 @@ export const CocktailInfoPage: React.FC = () => {
     <section className="section cocktail-info-page">
       <h2 className="info-page-h2">{cocktail.name}</h2>
       <div className="content info-page-wrapper">
-        <div className="image-category">
-          <CocktailImage cocktail={cocktail} classStyle="info-page-image" />
+        <div className="info-image-container">
+          {/* <CocktailImage cocktail={cocktail} /> */}
+          <img className="cocktail-info-image" src={cocktail.thumbnail} />
         </div>
         <CocktailIngredients cocktail={cocktail} />
       </div>
