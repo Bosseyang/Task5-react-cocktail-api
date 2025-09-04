@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import type { ICocktail } from "../types/types";
 import { Loader } from "../components/Loader";
-import { CocktailImage } from "../components/CocktailImage";
 import { CocktailIngredients } from "../components/CocktailInfo";
 import { useParams } from "react-router";
 import { getCocktailById } from "../services/cocktailApi";
