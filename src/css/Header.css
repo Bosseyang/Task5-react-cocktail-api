@@ -26,3 +26,7 @@
 .header-nav a:hover {
   color: rgba(0, 0, 0, 0.555);
 }
+
+.header-link.active {
+  color: rgba(0, 0, 0, 0.7);
+}
