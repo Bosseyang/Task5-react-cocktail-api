@@ -21,6 +21,7 @@
 
 .cocktail-card:hover {
   color: #655947;
+  /* transform: scale(1.03); */
 }
 
 h2.cocktail-card-h2:hover {
@@ -34,4 +35,3 @@ h2.cocktail-card-h2:hover {
 .cocktail-card:hover .hidden-h3 {
   display: block;
 }
-
