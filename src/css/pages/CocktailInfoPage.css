@@ -19,7 +19,7 @@
   aspect-ratio: 1/1;
 }
 
-.image-category {
+.info-image-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,6 +28,15 @@
   width: 80%;
   height: 100%;
   gap: 0.5rem;
+}
+
+.cocktail-info-image {
+  object-fit: contain;
+
+  width: 100%;
+  height: 100%;
+
+  border-radius: 5px;
 }
 
 .info-page-h2 {
