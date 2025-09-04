@@ -17,3 +17,7 @@ body {
 
   background-image: linear-gradient(rgba(130, 154, 132, 0.7), rgba(101, 89, 71, 0.5));
 }
+
+#root {
+  min-height: 100vh;
+}
