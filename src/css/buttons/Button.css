@@ -16,3 +16,12 @@ button:hover {
   background-color: rgba(0, 0, 0, 0.5);
   color: whitesmoke;
 }
+
+.custom-button.disabled {
+  opacity: 50%;
+  background-color: rgb(63, 54, 54);
+}
+
+.custom-button.disabled:hover {
+  cursor: not-allowed;
+}
