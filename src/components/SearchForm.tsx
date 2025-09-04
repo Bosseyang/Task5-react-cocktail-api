@@ -3,6 +3,7 @@ import { SearchButton } from "./buttons/SearchButton";
 
 interface ISearchFormProps {
   onSearch: (query: string) => void;
+  // onSearch: (params: {name?: string }) => void;
 }
 export const SearchForm: React.FC<ISearchFormProps> = ({ onSearch }) => {
   const [input, setInput] = useState<string>("");
@@ -18,7 +19,8 @@ export const SearchForm: React.FC<ISearchFormProps> = ({ onSearch }) => {
         type="text"
         value={input}
         onChange={(e) => setInput(e.target.value)}
-        placeholder="Enter name of cocktail"
+        onFocus={(e) => e.target.select()}
+        placeholder="Search for a cocktail"
       />
       <SearchButton />
     </form>
