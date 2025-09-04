@@ -1,21 +1,41 @@
-.cocktail-list {
+/* For card style list */
+/* .cocktail-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
 
   list-style-type: none;
 
-  /* overflow-y: visible; */
-
-  /* height: 100%; */
-
   gap: 1rem;
   padding: 1rem;
+} */
+
+/* For name style list */
+.cocktail-list {
+  display: flex;
+  flex-direction: column;
+
+  list-style-type: disc;
+
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+
+  min-height: 360px;
+  min-width: 200px;
+  padding: 2rem;
+  gap: 0.5rem;
 }
 
 .cocktail-item {
   display: flex;
   justify-content: center;
+  text-align: center;
 
-  height: 500px;
+  /* height: 500px; */
+
+  /* display: list-item;
+  justify-content: center; */
+}
+
+.list-cocktail-name:hover {
+  color: rgba(0, 0, 0, 0.5);
 }
