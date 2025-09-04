@@ -12,7 +12,7 @@ export const CocktailCard: React.FC<ICocktailCardProps> = ({ cocktail }) => {
       <article className="cocktail-card">
         <CocktailImage cocktail={cocktail} />
         <h2 className="cocktail-card-h2">{cocktail.name}</h2>
-        <h3 className="hidden-h3">Click to see more</h3>
+        <h3 className="hidden-h3">Click to see more 🢥</h3>
       </article>
     </Link>
   );
