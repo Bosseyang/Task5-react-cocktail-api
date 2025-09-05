@@ -1,7 +1,37 @@
 import type { ICocktail } from "../types/types";
 import { mapRawCocktailData } from "./mapRawCocktailData";
 
-const URL = "https://www.thecocktaildb.com/api/json/v1/1";
+const URL: string = "https://www.thecocktaildb.com/api/json/v1/1";
+const API_LIMIT: number = 100;
+
+function mapFilterResults(drinks: any[] | null | undefined): ICocktail[] {
+  if (!Array.isArray(drinks)) return [];
+  if (drinks.length >= API_LIMIT) {
+    return drinks.slice(0, API_LIMIT).map((d) => ({
+      id: d.idDrink,
+      name: d.strDrink,
+      tags: [],
+      category: "",
+      alcoholic: false,
+      glass: "",
+      instructions: "",
+      thumbnail: d.strDrinkThumb,
+      ingredients: [],
+    }));
+  }
+
+  return drinks.map((d) => ({
+    id: d.idDrink,
+    name: d.strDrink,
+    tags: [],
+    category: "",
+    alcoholic: false,
+    glass: "",
+    instructions: "",
+    thumbnail: d.strDrinkThumb,
+    ingredients: [],
+  }));
+}
 
 export async function getRandomCocktail(): Promise<ICocktail> {
   const res = await fetch(`${URL}/random.php`);
@@ -31,7 +61,8 @@ export async function searchByIngredient(ingredient: string): Promise<ICocktail[
   if (!res.ok) throw new Error("Failed ingredient search");
   const data = await res.json();
   if (!data.drinks) return [];
-  return await fetchCocktailDetails(data.drinks.map((d: any) => d.idDrink));
+  // return await fetchCocktailDetails(data.drinks.map((d: any) => d.idDrink));
+  return mapFilterResults(data.drinks);
 }
 
 export async function searchByCategory(category: string): Promise<ICocktail[]> {
@@ -39,7 +70,8 @@ export async function searchByCategory(category: string): Promise<ICocktail[]> {
   if (!res.ok) throw new Error("Failed category search");
   const data = await res.json();
   if (!data.drinks) return [];
-  return await fetchCocktailDetails(data.drinks.map((d: any) => d.idDrink));
+  // return await fetchCocktailDetails(data.drinks.map((d: any) => d.idDrink));
+  return mapFilterResults(data.drinks);
 }
 
 export async function searchByGlass(glass: string): Promise<ICocktail[]> {
@@ -47,14 +79,21 @@ export async function searchByGlass(glass: string): Promise<ICocktail[]> {
   if (!res.ok) throw new Error("Failed glass search");
   const data = await res.json();
   if (!data.drinks) return [];
-  return await fetchCocktailDetails(data.drinks.map((d: any) => d.idDrink));
+  // return await fetchCocktailDetails(data.drinks.map((d: any) => d.idDrink));
+  return mapFilterResults(data.drinks);
 }
 
-async function fetchCocktailDetails(ids: string[]): Promise<ICocktail[]> {
-  const promises = ids.map(async (id) => {
-    const res = await fetch(`${URL}/lookup.php?i=${id}`);
-    const data = await res.json();
-    return mapRawCocktailData(data.drinks[0]);
-  });
-  return Promise.all(promises);
-}
+// async function fetchCocktailDetails(ids: string[], API_LIMIT: number): Promise<ICocktail[]> {
+//   const limited = ids.slice(0, API_LIMIT);
+//   try {
+//     const promises = limited.map(async (id) => {
+//       const res = await fetch(`${URL}/lookup.php?i=${id}`);
+//       const data = await res.json();
+//       return mapRawCocktailData(data.drinks[0]);
+//     });
+//     return Promise.all(promises);
+//   } catch (err) {
+//     console.error("Failed fetching details:", err);
+//     return [];
+//   }
+// }
