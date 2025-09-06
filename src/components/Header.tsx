@@ -16,6 +16,9 @@ export const Header: React.FC = () => {
         <NavLink className="header-link" to="/search">
           <h2>Search</h2>
         </NavLink>
+        <NavLink className="header-link" to="/favorites">
+          <h2>Favorites</h2>
+        </NavLink>
       </nav>
     </header>
   );
