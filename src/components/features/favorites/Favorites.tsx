@@ -1,13 +1,12 @@
-import { FavoriteContext } from "./context"
-
+import { FavoriteContext } from "./context";
 
 export const Favorites = (): ReactElement => {
-    const { favorites } = useContext(FavoriteContext);
+  const { favorites } = useContext(FavoriteContext);
 
-    const renderFavorites = (): ReactNode => {
-        if (favorites.length) {
-            return favorites.map((f) => <Cocktail></Cocktail>)
-        }
+  const renderFavorites = (): ReactNode => {
+    if (favorites.length) {
+      return favorites.map((f) => <Cocktail></Cocktail>);
     }
-    return <section className="favorites"></section>
-}
+  };
+  return <section className="favorites"></section>;
+};
