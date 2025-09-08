@@ -23,7 +23,7 @@ function serialize(params: SearchParams) {
   return JSON.stringify(params);
 }
 
-export function useAdvancedSearch() {
+export function useAdvancedSearch(resultsPerPage: number = RESULTS_PER_PAGE) {
   const [results, setResults] = useState<ICocktail[]>([]);
   const [page, setPage] = useState<number>(1);
   const [loading, setLoading] = useState<boolean>(false);
@@ -82,8 +82,8 @@ export function useAdvancedSearch() {
     setLoading(false);
   }
 
-  const totalPages = Math.ceil(results.length / RESULTS_PER_PAGE);
-  const paginated = results.slice((page - 1) * RESULTS_PER_PAGE, page * RESULTS_PER_PAGE);
+  const totalPages = Math.ceil(results.length / resultsPerPage);
+  const paginated = results.slice((page - 1) * resultsPerPage, page * resultsPerPage);
 
   return { results, paginated, page, setPage, totalPages, loading, handleSearch, error };
 }
