@@ -7,7 +7,7 @@ import { useAdvancedSearch } from "../hooks/useAdvancedSearch";
 export const SearchPage: React.FC = () => {
   // const { handleSearch, loading, page, setPage, totalPages, paginated } = useCocktailSearch();
   const { handleSearch, loading, page, setPage, totalPages, paginated, error } =
-    useAdvancedSearch();
+    useAdvancedSearch(10);
 
   return (
     <section className="search-page">
