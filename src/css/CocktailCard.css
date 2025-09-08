@@ -5,18 +5,26 @@
   justify-items: center;
 
   gap: 0.5rem;
-  padding: 1rem;
+  padding-bottom: 0.5rem;
   background-color: rgba(186, 154, 123, 0.6);
   box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.4);
 
-  border-radius: 1rem;
+  border-radius: 0.5rem;
 
   width: 400px;
   height: 500px;
 }
-.cocktail-card-link {
-  height: 100%;
-  width: 100%;
+
+.cocktail-card.cocktail-card-small {
+  width: 300px;
+  height: 380px;
+}
+
+.cocktail-card-container {
+  position: relative;
+
+  /* width: 400px;
+  height: 500px; */
 }
 
 .cocktail-card:hover {
