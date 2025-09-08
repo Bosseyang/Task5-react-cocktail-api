@@ -43,3 +43,16 @@ h2.cocktail-card-h2:hover {
 .cocktail-card:hover .hidden-h3 {
   display: block;
 }
+
+.card-favorite-position {
+  z-index: 2;
+  position: absolute;
+
+  top: 0;
+  right: 0;
+
+  padding: 0.5rem;
+
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 0 0.5rem 0 0.5rem;
+}
