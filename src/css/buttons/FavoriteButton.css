@@ -9,3 +9,17 @@
 .favorite:hover {
   font-size: 38px;
 }
+
+.favorite-button {
+  z-index: 2;
+
+  display: infline-flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 40px;
+  height: 40px;
+
+  background-color: rgba(0, 0, 0, 0);
+  box-shadow: 0 0 0;
+}
