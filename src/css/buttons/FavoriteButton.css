@@ -1,0 +1,8 @@
+.favorite {
+  font-size: 32px;
+  font-variation-settings: "opsz" 48, "wght" 700;
+}
+.fill.favorite {
+  font-variation-settings: "FILL" 1;
+  color: red;
+}
