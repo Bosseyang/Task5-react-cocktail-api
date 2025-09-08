@@ -42,9 +42,6 @@ export function AdvancedSearchForm({ onSearch }: IAdvancedSearchFromProps) {
           className="search-input"
         />
         <SearchButton />
-        {/* <button type="button" onClick={() => setHidden((prev) => !prev)} className="button">
-          {hidden ? "Hide advanced options" : "Show advanced options"}
-        </button> */}
         <SearchOptionsButton
           onClick={() => setHidden((prev) => !prev)}
           name={hidden ? "Hide advanced options" : "Show advanced options"}
