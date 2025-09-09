@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { FavoriteContext } from "../components/features/favorites/context";
+import { FavoriteContext } from "../app/context";
 import { CocktailCard } from "../components/CocktailCard";
 
 export const FavoritesPage: React.FC = () => {
