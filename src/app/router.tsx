@@ -16,7 +16,7 @@ export const routerJSX = createBrowserRouter(
       <Route path="/cocktail/:id" element={<CocktailInfoPage />} />
       <Route path="/search" element={<SearchPage />} />
       <Route path="/favorites" element={<FavoritesPage />} />
-      <Route path="/ingredients" element={<IngredientPage />} />
+      <Route path="/ingredient/:name" element={<IngredientPage />} />
     </Route>
   )
 );
