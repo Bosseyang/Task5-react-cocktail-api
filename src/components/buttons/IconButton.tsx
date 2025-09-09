@@ -18,6 +18,7 @@ export const IconButton: React.FC<IIConButtonProps> = ({
       disabled={disabled}
       className={`custom-button ${disabled ? "disabled" : ""}`}
       title={title}
+      type="button"
     >
       <span className="material-symbols-outlined">{icon}</span>
       <h2>{name}</h2>
