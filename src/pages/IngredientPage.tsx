@@ -46,7 +46,6 @@ export const IngredientPage: React.FC = () => {
 
       <section className="ingredient-cocktails ">
         <h3 className="ingredient-details-h3">Cocktails using {ingredient.name}</h3>
-
         {cocktails.length === 0 ? (
           <p>No cocktails found with this ingredient.</p>
         ) : (
