@@ -15,6 +15,9 @@ export const FavoritesPage: React.FC = () => {
         {favorites.map((cocktail) => (
           <div className="" key={cocktail.id}>
             <CocktailCard cocktail={cocktail} cardSize="small" />
+            {/* <button onClick={() => remove(cocktail)} className="remove-favorite-button">
+              Remove
+            </button> */}
           </div>
         ))}
       </div>
