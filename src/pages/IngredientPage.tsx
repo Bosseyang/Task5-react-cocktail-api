@@ -16,6 +16,8 @@ export const IngredientPage: React.FC = () => {
       setCocktails(drinks);
       setLoading(false);
     }
+
+    fetchData();
   }, [name]);
   if (loading) return <Loader />;
   if (!ingredient) return <p>No ingredient found</p>;
