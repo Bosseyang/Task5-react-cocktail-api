@@ -13,6 +13,7 @@ export const FavoritesPage: React.FC = () => {
       <div className="favorites-container">
         {favorites.map((cocktail) => (
           <div className="" key={cocktail.id}>
+            <CocktailCard cocktail={cocktail} cardSize="small" />
           </div>
         ))}
       </div>
