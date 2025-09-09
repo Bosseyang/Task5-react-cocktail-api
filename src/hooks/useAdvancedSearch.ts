@@ -6,6 +6,7 @@ import {
   searchByCategory,
   searchByGlass,
 } from "../services/cocktailApi";
+import { usePagination } from "./usePagination";
 
 const RESULTS_PER_PAGE: number = 10;
 const API_LIMIT: number = 100;
@@ -25,13 +26,14 @@ function serialize(params: SearchParams) {
 
 export function useAdvancedSearch(resultsPerPage: number = RESULTS_PER_PAGE) {
   const [results, setResults] = useState<ICocktail[]>([]);
-  const [page, setPage] = useState<number>(1);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
+  const { page, setPage, totalPages, paginated, reset } = usePagination(results, resultsPerPage);
+
   async function handleSearch(params: SearchParams) {
     const key = serialize(params);
-    setPage(1);
+    reset();
     setError(null);
 
     if (cache.has(key)) {
@@ -81,9 +83,6 @@ export function useAdvancedSearch(resultsPerPage: number = RESULTS_PER_PAGE) {
     }
     setLoading(false);
   }
-
-  const totalPages = Math.ceil(results.length / resultsPerPage);
-  const paginated = results.slice((page - 1) * resultsPerPage, page * resultsPerPage);
 
   return { results, paginated, page, setPage, totalPages, loading, handleSearch, error };
 }
