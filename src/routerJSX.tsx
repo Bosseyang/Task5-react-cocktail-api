@@ -3,6 +3,7 @@ import { App } from "./components/App";
 import { LandingPage } from "./pages/LandingPage";
 import { CocktailInfoPage } from "./pages/CocktailInfoPage";
 import { SearchPage } from "./pages/SearchPage";
+import { FavoritesPage } from "./pages/FavoritesPage";
 
 // Data router with JSX routes.
 export const routerJSX = createBrowserRouter(
@@ -13,6 +14,7 @@ export const routerJSX = createBrowserRouter(
       </Route>
       <Route path="/cocktail/:id" element={<CocktailInfoPage />} />
       <Route path="/search" element={<SearchPage />} />
+      <Route path="/favorites" element={<FavoritesPage />} />
     </Route>
   )
 );
