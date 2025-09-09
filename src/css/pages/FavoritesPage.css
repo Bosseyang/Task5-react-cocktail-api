@@ -13,3 +13,7 @@
 .favorites-h2 {
   padding: 1rem;
 }
+
+.favorites-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
