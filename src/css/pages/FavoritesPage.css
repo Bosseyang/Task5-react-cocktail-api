@@ -1,3 +1,9 @@
+.favorites-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .favorites-h2 {
   padding: 1rem;
 }
