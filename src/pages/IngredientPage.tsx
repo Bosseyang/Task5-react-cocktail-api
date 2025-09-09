@@ -12,8 +12,10 @@ export const IngredientPage: React.FC = () => {
       setLoading(true);
       const ing = await getIngredientByName(name);
       setIngredient(ing);
+
       const drinks = await getCocktailsByIngredient(name);
       setCocktails(drinks);
+
       setLoading(false);
     }
 
@@ -35,8 +37,19 @@ export const IngredientPage: React.FC = () => {
         <h4>Ingredient Description</h4>
         {ingredient.description && <p className="">{ingredient.description}</p>}
       </section>
+
       <section className="ingredient-cocktails ">
         <h3 className="ingredient-details-h3">Cocktails using {ingredient.name}</h3>
+
+        {cocktails.length === 0 ? (
+          <p>No cocktails found with this ingredient.</p>
+        ) : (
+          <div className="ingredient-cocktails-grid">
+            {cocktails.map((c) => (
+              <CocktailCard key={c.id} cocktail={c} cardSize="small" />
+            ))}
+          </div>
+        )}
       </section>
     </main>
   );
