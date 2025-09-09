@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import type { ICocktail } from "../../types/types";
-import { FavoriteContext } from "../features/favorites/context";
+import { FavoriteContext } from "../../app/context";
 
 interface IFavoriteButtonContext {
   cocktail: ICocktail;
@@ -14,6 +14,7 @@ export const FavoriteButton: React.FC<IFavoriteButtonContext> = ({ cocktail }) =
       onClick={() => (isFavorite ? remove(cocktail) : add(cocktail))}
       className={`button favorite-button`}
       title="favorite"
+      type="button"
     >
       <span className={`favorite material-symbols-outlined ${isFavorite ? "fill" : ""}`}>
         favorite
