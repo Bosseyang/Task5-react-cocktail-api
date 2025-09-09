@@ -30,6 +30,9 @@ export const IngredientPage: React.FC = () => {
       <section className="ingredient-details ">
         <h3 className="ingredient-details-h3">Ingredient Details</h3>
         {ingredient.type && <InfoP label="Type: " info={ingredient.type} />}
+        <InfoP label="Alcoholic: " info={ingredient.isAlcoholic ? "Yes" : "No"} />
+        {ingredient.abv && <InfoP label="ABV: " info={`${ingredient.abv}%`} />}
+        {ingredient.description && <p className="">{ingredient.description}</p>}
       </section>
       <section className="ingredient-cocktails ">
         <h3 className="ingredient-details-h3">Cocktails using {ingredient.name}</h3>
