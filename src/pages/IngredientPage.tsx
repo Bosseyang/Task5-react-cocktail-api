@@ -19,13 +19,17 @@ export const IngredientPage: React.FC = () => {
 
     fetchData();
   }, [name]);
+
   if (loading) return <Loader />;
   if (!ingredient) return <p>No ingredient found</p>;
+
   return (
     <main className="main ingredient-page">
       <h2>{ingredient.name}</h2>
+
       <section className="ingredient-details ">
         <h3 className="ingredient-details-h3">Ingredient Details</h3>
+        {ingredient.type && <InfoP label="Type: " info={ingredient.type} />}
       </section>
       <section className="ingredient-cocktails ">
         <h3 className="ingredient-details-h3">Cocktails using {ingredient.name}</h3>
