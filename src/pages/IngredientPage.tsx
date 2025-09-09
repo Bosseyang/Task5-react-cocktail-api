@@ -1,11 +1,17 @@
+import { useParams } from "react-router";
 import { type ICocktail, type IIngredientDetail } from "../types/types";
 import { useEffect, useState } from "react";
 import { getCocktailsByIngredient, getIngredientByName } from "../services/ingredientApi";
 import { Loader } from "../components/Loader";
+import { InfoP } from "../components/InfoP";
+import { CocktailCard } from "../components/CocktailCard";
+
 export const IngredientPage: React.FC = () => {
+  const { name } = useParams<{ name: string }>();
   const [ingredient, setIngredient] = useState<IIngredientDetail | null>(null);
   const [cocktails, setCocktails] = useState<ICocktail[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
+
   useEffect(() => {
     async function fetchData() {
       if (!name) return;
