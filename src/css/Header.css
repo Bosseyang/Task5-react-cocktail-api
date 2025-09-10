@@ -31,3 +31,16 @@
 .header-link.active {
   color: rgba(0, 0, 0, 0.7);
 }
+
+.drop-down.menu {
+  z-index: 3;
+  position: absolute;
+  right: 1rem;
+
+  display: flex;
+  flex-direction: column;
+
+  background-color: whitesmoke;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
