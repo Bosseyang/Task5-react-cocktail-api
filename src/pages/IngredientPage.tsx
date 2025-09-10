@@ -3,8 +3,6 @@ import { type ICocktail, type IIngredientDetail } from "../types/types";
 import { useEffect, useState } from "react";
 import { getCocktailsByIngredient, getIngredientByName } from "../services/ingredientApi";
 import { Loader } from "../components/Loader";
-import { InfoP } from "../components/InfoP";
-import { CocktailCard } from "../components/CocktailCard";
 import { useIngredient } from "../hooks/useIngredient";
 import { IngredientDetails } from "../components/IngredientDetails";
 import { IngredientCocktails } from "../components/IngredientCocktails";
