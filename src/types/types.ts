@@ -14,3 +14,12 @@ export interface ICocktail {
   thumbnail: string;
   ingredients: IIngredient[];
 }
+
+export interface IIngredientDetail {
+  id: string;
+  name: string;
+  description?: string;
+  type?: string;
+  isAlcoholic?: boolean;
+  abv?: string;
+}
