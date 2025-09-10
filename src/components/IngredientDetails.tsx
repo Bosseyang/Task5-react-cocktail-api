@@ -14,8 +14,10 @@ export const IngredientDetails: React.FC<IIngredientDetailsProps> = ({ ingredien
         <InfoP label="Alcoholic: " info={ingredient.isAlcoholic ? "Yes" : "No"} />
         {ingredient.abv && <InfoP label="ABV: " info={`${ingredient.abv}%`} />}
       </div>
+      <div className="ingredient-description-container">
         {ingredient.description && <h4 className="">Ingredient description</h4>}
         {ingredient.description && <p className="">{ingredient.description}</p>}
+      </div>
     </section>
   );
 };
