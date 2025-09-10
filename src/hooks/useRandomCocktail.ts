@@ -21,6 +21,15 @@ export function useRandomCocktail() {
   }
 
   useEffect(() => {
+    const stored = localStorage.getItem(STORAGE_KEY);
+    if (stored) {
+      try {
+        setCocktail(JSON.parse(stored));
+        return;
+      } catch {
+        console.warn("Failed to parse stored cocktail");
+      }
+    }
     fetchRandom();
   }, []);
   return { cocktail, loading, fetchRandom };
