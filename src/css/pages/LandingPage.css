@@ -15,10 +15,6 @@ main.landing-page {
   text-align: center;
 }
 
-.landing-page .cocktail.card {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 @media screen and (max-width: 480px) {
   main.landing-page {
     gap: 0.5rem;
