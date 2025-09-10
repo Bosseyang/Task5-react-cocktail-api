@@ -1,0 +1,18 @@
+.ingredient-cocktails-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  align-items: center;
+  gap: 1rem;
+
+  padding: 1rem;
+  padding-bottom: 4rem;
+}
+
+.ingredient-cocktails-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+
+  gap: 2rem;
+}
