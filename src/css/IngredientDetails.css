@@ -1,0 +1,25 @@
+.ingredient-details.section {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+
+  justify-content: center;
+  align-items: center;
+  /* text-align: center; */
+
+  padding: 1rem;
+
+  gap: 2rem;
+}
+
+.ingredient-details-container {
+  justify-self: end;
+  text-align: end;
+
+  width: 85%;
+}
+
+.ingredient-description-container {
+  justify-self: start;
+
+  width: 85%;
+}
