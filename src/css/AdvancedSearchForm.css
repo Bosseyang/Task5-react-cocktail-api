@@ -12,11 +12,18 @@
   /* box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.4); */
 }
 
-form .search-wrapper {
+.search-btn-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+
+  width: 100%;
+}
+
+/* form .search-wrapper {
   display: flex;
   justify-content: space-between;
-}
-form .adv-search-wrapper {
+} */
+.adv-search-wrapper {
   display: inline-grid;
   grid-template-columns: 1fr 1fr 1fr;
 
@@ -26,4 +33,18 @@ form .adv-search-wrapper {
 .form-error-text {
   text-align: center;
   color: red;
+}
+
+@media screen and (max-width: 480px) {
+  .advanced-search-form {
+    display: flex;
+    flex-direction: column;
+
+    width: 95%;
+  }
+
+  .adv-search-wrapper {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
 }
