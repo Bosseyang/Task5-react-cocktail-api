@@ -11,17 +11,18 @@ button {
   padding: 0.5rem;
   gap: 0.2rem;
 }
+
 button:hover {
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.5);
   color: whitesmoke;
 }
 
-.custom-button.disabled {
+.custom-btn.disabled {
   opacity: 50%;
   background-color: rgb(63, 54, 54);
 }
 
-.custom-button.disabled:hover {
+.custom-btn.disabled:hover {
   cursor: not-allowed;
 }
