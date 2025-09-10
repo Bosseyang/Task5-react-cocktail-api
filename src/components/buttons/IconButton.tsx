@@ -16,7 +16,7 @@ export const IconButton: React.FC<IIConButtonProps> = ({
     <button
       onClick={onClick}
       disabled={disabled}
-      className={`custom-button ${disabled ? "disabled" : ""}`}
+      className={`icon-btn button custom-btn ${disabled ? "disabled" : ""}`}
       title={title}
       type="button"
     >
