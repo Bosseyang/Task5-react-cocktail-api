@@ -4,6 +4,7 @@ main.landing-page {
   align-items: center;
 
   width: 100%;
+  /* height: 100vh; */
 
   gap: 1rem;
 
@@ -18,4 +19,18 @@ main.landing-page {
   display: flex;
   justify-content: center;
   align-items: center;
+@media screen and (max-width: 480px) {
+  main.landing-page {
+    gap: 0.5rem;
+
+    padding-block: 1rem;
+  }
+  .landing-page .cocktail-card-container {
+    width: 300px;
+    height: 400px;
+  }
+  a.cocktail-card {
+    width: 300px;
+    height: 400px;
+  }
 }
