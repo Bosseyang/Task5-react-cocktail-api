@@ -30,6 +30,19 @@ export const Header: React.FC = () => {
           <IconButton onClick={toggleMenu} icon={open ? "close" : "menu"} name="Menu" />
         </div>
       </nav>
+      {open && (
+        <div className="drop-down menu">
+          <NavLink className="header-link" to="/" onClick={() => setOpen(false)}>
+            <h2>Home</h2>
+          </NavLink>
+          <NavLink className="header-link" to="/search" onClick={() => setOpen(false)}>
+            <h2>Search</h2>
+          </NavLink>
+          <NavLink className="header-link" to="/favorites" onClick={() => setOpen(false)}>
+            <h2>Favorites</h2>
+          </NavLink>
+        </div>
+      )}
     </header>
   );
 };
