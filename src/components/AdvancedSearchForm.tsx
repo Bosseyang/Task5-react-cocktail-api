@@ -32,15 +32,15 @@ export function AdvancedSearchForm({ onSearch }: IAdvancedSearchFromProps) {
   return (
     <form onSubmit={handleSubmit} className="advanced-search-form">
       {error && <p className="form-error-text">{error}</p>}
-      <div className="search-wrapper">
-        <input
-          id={name}
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          onFocus={(e) => e.target.select()}
-          placeholder="Search by cocktail name"
-          className="search-input"
-        />
+      <input
+        id={name}
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+        onFocus={(e) => e.target.select()}
+        placeholder="Search by cocktail name"
+        className="search-input"
+      />
+      <div className="search-btn-wrapper">
         <SearchButton />
         <SearchOptionsButton
           onClick={() => setHidden((prev) => !prev)}
