@@ -44,3 +44,15 @@
   border-radius: 0.5rem;
   padding: 0.5rem;
 }
+
+@media screen and (max-width: 480px) {
+  .mobile-nav {
+    display: flex;
+  }
+  .desktop-nav {
+    display: none;
+  }
+  .header-nav {
+    justify-content: space-between;
+  }
+}
