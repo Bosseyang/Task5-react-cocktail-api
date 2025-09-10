@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import type { ICocktail } from "../types/types";
 import { InfoP } from "./InfoP";
 
@@ -24,9 +25,14 @@ export const CocktailIngredients: React.FC<IInfoProps> = ({ cocktail }: IInfoPro
       </div>
       <h2 className="ingredients-h2">Ingredients</h2>
       <ul className="ingredients-list">
-        {cocktail.ingredients.map((ing, index) => (
-          <li key={index}>
-            {ing.ingredient} {ing.measure && `- ${ing.measure}`}
+        {cocktail.ingredients.map((ing) => (
+          <li key={ing.ingredient}>
+            <strong>
+              <Link to={`/ingredient/${ing.ingredient}`} className="ingredient-link">
+                {ing.ingredient}
+              </Link>
+            </strong>
+            {ing.measure && ` - ${ing.measure}`}
           </li>
         ))}
       </ul>
