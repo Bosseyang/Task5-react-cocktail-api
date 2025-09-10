@@ -5,6 +5,7 @@ import { getCocktailsByIngredient, getIngredientByName } from "../services/ingre
 import { Loader } from "../components/Loader";
 import { InfoP } from "../components/InfoP";
 import { CocktailCard } from "../components/CocktailCard";
+import { useIngredient } from "../hooks/useIngredient";
 
 export const IngredientPage: React.FC = () => {
   const { name } = useParams<{ name: string }>();
@@ -12,21 +13,7 @@ export const IngredientPage: React.FC = () => {
   const [cocktails, setCocktails] = useState<ICocktail[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
 
-  useEffect(() => {
-    async function fetchData() {
-      if (!name) return;
-      setLoading(true);
-      const ing = await getIngredientByName(name);
-      setIngredient(ing);
-
-      const drinks = await getCocktailsByIngredient(name);
-      setCocktails(drinks);
-
-      setLoading(false);
-    }
-
-    fetchData();
-  }, [name]);
+  const { ingredient, cocktails, loading } = useIngredient(name);
 
   if (loading) return <Loader />;
   if (!ingredient) return <p>No ingredient found</p>;
