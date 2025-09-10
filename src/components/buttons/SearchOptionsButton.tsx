@@ -17,6 +17,7 @@ export const SearchOptionsButton: React.FC<ISearchOptionsButtonProps> = ({
       disabled={disabled}
       className={`search-options-button ${disabled ? "disabled" : ""}`}
       title={title}
+      type="button"
     >
       <p>{name}</p>
     </button>
