@@ -1,7 +1,4 @@
 import { useParams } from "react-router";
-import { type ICocktail, type IIngredientDetail } from "../types/types";
-import { useEffect, useState } from "react";
-import { getCocktailsByIngredient, getIngredientByName } from "../services/ingredientApi";
 import { Loader } from "../components/Loader";
 import { useIngredient } from "../hooks/useIngredient";
 import { IngredientDetails } from "../components/IngredientDetails";
