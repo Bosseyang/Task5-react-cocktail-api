@@ -8,7 +8,7 @@ interface IInfoProps {
 
 export const CocktailIngredients: React.FC<IInfoProps> = ({ cocktail }: IInfoProps) => {
   return (
-    <div className="ingredients-wrapper">
+    <div className="ingredients-container">
       <div className="info-wrapper">
         {cocktail.alcoholic ? (
           <InfoP label={"Alcoholic:"} info={"Yes"} />
