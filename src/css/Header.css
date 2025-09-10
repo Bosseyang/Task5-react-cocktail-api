@@ -59,6 +59,9 @@
 }
 
 @media screen and (max-width: 480px) {
+  .header {
+    padding-block: 0.5rem;
+  }
   .mobile-nav {
     display: flex;
   }
