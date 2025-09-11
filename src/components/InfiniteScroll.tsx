@@ -4,16 +4,20 @@ import { CocktailCard } from "./CocktailCard";
 import { Loader } from "./Loader";
 import { IconButton } from "./buttons/IconButton";
 import { CocktailList } from "./CocktailList";
+
 interface IInfiniteScrollProps {
   items: ICocktail[];
   batchSize?: number;
   view?: boolean;
   imgList?: boolean;
 }
+
 type ViewMode = "grid" | "list";
+
 export const InfiniteScroll: React.FC<IInfiniteScrollProps> = ({
   items,
   batchSize = 8,
+  imgList = false,
 }) => {
   const loaderRef = useRef<HTMLDivElement | null>(null);
   const [visibleCount, setVisibleCount] = useState(batchSize);
@@ -39,6 +43,9 @@ export const InfiniteScroll: React.FC<IInfiniteScrollProps> = ({
       { threshold: 1.0, rootMargin: "0px" }
     );
 
+    if (loaderRef.current) {
+      observer.observe(loaderRef.current);
+    }
 
     return () => {
       if (loaderRef.current) {
@@ -46,11 +53,13 @@ export const InfiniteScroll: React.FC<IInfiniteScrollProps> = ({
       }
     };
   }, [items, batchSize]);
+
   useEffect(() => {
     setVisibleCount(batchSize);
   }, [items, batchSize]);
 
   const visibleItems = items.slice(0, visibleCount);
+
   return (
     <div className="item-container">
       <div className="view-mode-btn wrapper">
@@ -60,6 +69,7 @@ export const InfiniteScroll: React.FC<IInfiniteScrollProps> = ({
           name={viewMode === "grid" ? "List View" : "Grid View"}
         />
       </div>
+
       {viewMode === "grid" ? (
         <div className="grid-view grid">
           {visibleItems.map((cocktail) => (
