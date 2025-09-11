@@ -9,6 +9,13 @@ export const IngredientDetails: React.FC<IIngredientDetailsProps> = ({ ingredien
   return (
     <section className="section ingredient-details ">
       <div className="ingredient-details-container">
+        <div className="ingredient-img-wrapper">
+          <img
+            alt="{ingredient.name}"
+            src={`https://www.thecocktaildb.com/images/ingredients/${ingredient.name}.png`}
+            className="ingredient-img"
+          />
+        </div>
         <h3 className="ingredient-details-h3">Ingredient details</h3>
         {ingredient.type && <InfoP label="Type: " info={ingredient.type} />}
         <InfoP label="Alcoholic: " info={ingredient.isAlcoholic ? "Yes" : "No"} />
