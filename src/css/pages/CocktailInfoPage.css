@@ -57,3 +57,30 @@
   background-color: rgba(0, 0, 0, 0.3);
   border-radius: 0 0.5rem 0 0.5rem;
 }
+
+@media screen and (max-width: 480px) {
+  .content.info-page-wrapper {
+    grid-template-columns: auto;
+
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+
+    padding-block: 0rem;
+    padding-inline: 0rem;
+
+    gap: 2rem;
+  }
+
+  .info-image-container {
+    justify-self: center;
+  }
+
+  .ingredients-container {
+    padding-inline: 1rem;
+  }
+
+  .info-wrapper {
+    text-align: center;
+  }
+}
