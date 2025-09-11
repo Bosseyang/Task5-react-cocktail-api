@@ -1,13 +1,16 @@
 import { useEffect, useRef, useState } from "react";
 import type { ICocktail } from "../types/types";
+import { CocktailCard } from "./CocktailCard";
 import { Loader } from "./Loader";
 import { IconButton } from "./buttons/IconButton";
+import { CocktailList } from "./CocktailList";
 interface IInfiniteScrollProps {
   items: ICocktail[];
   batchSize?: number;
   view?: boolean;
   imgList?: boolean;
 }
+type ViewMode = "grid" | "list";
 export const InfiniteScroll: React.FC<IInfiniteScrollProps> = ({
   items,
   batchSize = 8,
@@ -39,9 +42,19 @@ export const InfiniteScroll: React.FC<IInfiniteScrollProps> = ({
   const visibleItems = items.slice(0, visibleCount);
   return (
     <div className="item-container">
+      <div className="view-mode-btn wrapper">
+        <IconButton
+          onClick={toggleView}
+          icon={viewMode === "grid" ? "view_list" : "grid_view"}
+          name={viewMode === "grid" ? "List View" : "Grid View"}
+        />
+      </div>
+      {viewMode === "grid" ? (
+        <div className="grid-view grid">
           {visibleItems.map((cocktail) => (
             <CocktailCard key={cocktail.id} cocktail={cocktail} cardSize="small" />
           ))}
+        </div>
     </div>
   );
 };
