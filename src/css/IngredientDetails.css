@@ -12,8 +12,11 @@
 }
 
 .ingredient-details-container {
+  display: flex;
+  flex-direction: column;
   justify-self: end;
-  text-align: end;
+  text-align: center;
+  align-items: center;
 
   width: 85%;
 }
