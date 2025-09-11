@@ -7,7 +7,7 @@ interface IIngredientDetailsProps {
 
 export const IngredientDetails: React.FC<IIngredientDetailsProps> = ({ ingredient }) => {
   return (
-    <section className="section ingredient-details ">
+    <section className={`section ingredient-details ${ingredient.description ? "" : "hidden"}`}>
       <div className="ingredient-details-container">
         <div className="ingredient-img-wrapper">
           <img
