@@ -76,6 +76,9 @@ export const InfiniteScroll: React.FC<IInfiniteScrollProps> = ({
           <span>Scroll to load more...</span>
         </div>
       )}
+      <div className="scroll-up-btn">
+        <IconButton icon="arrow_upward" onClick={handleScroll} />
+      </div>
     </div>
   );
 };
