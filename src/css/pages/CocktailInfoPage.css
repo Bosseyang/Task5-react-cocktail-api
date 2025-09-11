@@ -40,6 +40,12 @@
   border-radius: 0.5rem;
 }
 
+.ingredients-container {
+  display: flex;
+  flex-direction: column;
+
+  gap: 0.5rem;
+}
 .info-page-h2 {
   text-align: center;
   color: rgba(0, 0, 0, 0.8);
