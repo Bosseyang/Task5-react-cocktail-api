@@ -66,6 +66,16 @@ export const InfiniteScroll: React.FC<IInfiniteScrollProps> = ({
             <CocktailCard key={cocktail.id} cocktail={cocktail} cardSize="small" />
           ))}
         </div>
+      ) : (
+        <CocktailList cocktails={visibleItems} />
+      )}
+
+      {visibleCount < items.length && (
+        <div ref={loaderRef} className="loading-wrapper">
+          <Loader />
+          <span>Scroll to load more...</span>
+        </div>
+      )}
     </div>
   );
 };
