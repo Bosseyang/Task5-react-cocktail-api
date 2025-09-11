@@ -17,6 +17,17 @@ export const InfiniteScroll: React.FC<IInfiniteScrollProps> = ({
 }) => {
   const loaderRef = useRef<HTMLDivElement | null>(null);
   const [visibleCount, setVisibleCount] = useState(batchSize);
+  const [viewMode, setViewMode] = useState<ViewMode>("grid");
+
+  const toggleView = () => {
+    setViewMode((prev) => (prev === "grid" ? "list" : "grid"));
+    // setVisibleCount(batchSize);
+  };
+
+  const handleScroll = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
