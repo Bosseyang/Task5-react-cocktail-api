@@ -5,25 +5,18 @@ import { Loader } from "./Loader";
 import { IconButton } from "./buttons/IconButton";
 import { CocktailList } from "./CocktailList";
 import { useInfiniteScroll } from "../hooks/useInfiniteScroll";
+import { useViewMode } from "../hooks/useViewMode";
 
 interface IInfiniteScrollProps {
   items: ICocktail[];
   batchSize?: number;
 }
 
-type ViewMode = "grid" | "list";
-
-export const InfiniteScroll: React.FC<IInfiniteScrollProps> = ({ items, batchSize = 8 }) => {
-  const [viewMode, setViewMode] = useState<ViewMode>("grid");
-
+export const InfiniteScroll: React.FC<IInfiniteScrollProps> = ({ items, batchSize = 4 }) => {
   const { visibleItems, loaderRef, visibleCount } = useInfiniteScroll(items, batchSize);
+  const { viewMode, toggleView } = useViewMode("grid");
 
-  const toggleView = () => {
-    setViewMode((prev) => (prev === "grid" ? "list" : "grid"));
-    // setVisibleCount(batchSize);
-  };
-
-  const handleScroll = () => {
+  const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -54,7 +47,7 @@ export const InfiniteScroll: React.FC<IInfiniteScrollProps> = ({ items, batchSiz
         </div>
       )}
       <div className="scroll-up-btn">
-        <IconButton icon="arrow_upward" onClick={handleScroll} />
+        <IconButton icon="arrow_upward" onClick={scrollToTop} />
       </div>
     </div>
   );
