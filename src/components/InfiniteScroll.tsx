@@ -1,11 +1,10 @@
-import { useState } from "react";
 import type { ICocktail } from "../types/types";
-import { CocktailCard } from "./CocktailCard";
 import { Loader } from "./Loader";
 import { IconButton } from "./buttons/IconButton";
 import { CocktailList } from "./CocktailList";
 import { useInfiniteScroll } from "../hooks/useInfiniteScroll";
 import { useViewMode } from "../hooks/useViewMode";
+import { CocktailGrid } from "./CocktailGrid";
 
 interface IInfiniteScrollProps {
   items: ICocktail[];
@@ -31,11 +30,7 @@ export const InfiniteScroll: React.FC<IInfiniteScrollProps> = ({ items, batchSiz
       </div>
 
       {viewMode === "grid" ? (
-        <div className="grid-view grid">
-          {visibleItems.map((cocktail) => (
-            <CocktailCard key={cocktail.id} cocktail={cocktail} cardSize="small" />
-          ))}
-        </div>
+        <CocktailGrid cocktails={visibleItems} />
       ) : (
         <CocktailList cocktails={visibleItems} />
       )}
