@@ -77,4 +77,11 @@
     width: 100%;
   }
 
+  .ingredient-img-wrapper {
+    /* width: 300px;
+    height: 300px; */
+
+    height: 100%;
+    width: 100%;
+  }
 }
