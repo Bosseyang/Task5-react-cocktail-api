@@ -82,7 +82,7 @@ export const InfiniteScroll: React.FC<IInfiniteScrollProps> = ({
 
       {visibleCount < items.length && (
         <div ref={loaderRef} className="loading-wrapper">
-          <Loader />
+          <Loader loaderStyle="dots" />
           <span>Scroll to load more...</span>
         </div>
       )}
