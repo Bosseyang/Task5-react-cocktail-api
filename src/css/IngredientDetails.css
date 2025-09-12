@@ -65,4 +65,12 @@
 
     gap: 1rem;
   }
+
+  /* .ingredient-details.section::-webkit-scrollbar {
+    display: none;
+  } */
+  .ingredient-details-container {
+    width: 80%;
+  }
+
 }
