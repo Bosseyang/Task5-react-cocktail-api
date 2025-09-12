@@ -64,7 +64,7 @@
   border-radius: 0 0.5rem 0 0.5rem;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 1024px) {
   .content.info-page-wrapper {
     grid-template-columns: auto;
 
@@ -80,6 +80,8 @@
 
   .info-image-container {
     justify-self: center;
+    min-width: 400px;
+    max-width: 50%;
   }
 
   .ingredients-container {
@@ -88,5 +90,16 @@
 
   .info-wrapper {
     text-align: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .info-image-container {
+    min-width: 90%;
+  }
+
+  .info-page-h2 {
+    font-size: 18px;
+    padding-block: 0.5rem;
   }
 }
