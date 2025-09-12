@@ -23,7 +23,7 @@ export const CocktailIngredients: React.FC<IInfoProps> = ({ cocktail }: IInfoPro
           ""
         )}
       </div>
-      <h2 className="ingredients-h2">Ingredients</h2>
+      <h3 className="ingredients-h3">Ingredients</h3>
       <ul className="ingredients-list">
         {cocktail.ingredients.map((ing) => (
           <li key={ing.ingredient}>
@@ -37,7 +37,7 @@ export const CocktailIngredients: React.FC<IInfoProps> = ({ cocktail }: IInfoPro
         ))}
       </ul>
       <div className="instructions-wrapper">
-        <h2 className="instructions-h2">Instructions</h2>
+        <h3 className="instructions-h3">Instructions</h3>
         <p className="instructions-p">{cocktail.instructions}</p>
       </div>
     </div>
