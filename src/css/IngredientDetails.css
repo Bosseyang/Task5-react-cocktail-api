@@ -54,3 +54,15 @@
   height: 400px;
   /* height: 100%; */
 }
+@media screen and (max-width: 480px) {
+  .ingredient-details.section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    overflow-y: hidden;
+
+    gap: 1rem;
+  }
+}
