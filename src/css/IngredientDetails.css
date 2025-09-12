@@ -11,6 +11,10 @@
   /* gap: 2rem; */
 }
 
+.ingredients-container {
+  justify-self: start;
+}
+
 .ingredient-details.section.hidden {
   display: grid;
   grid-template-columns: 1fr;
@@ -54,6 +58,7 @@
   height: 400px;
   /* height: 100%; */
 }
+
 @media screen and (max-width: 480px) {
   .ingredient-details.section {
     display: flex;
